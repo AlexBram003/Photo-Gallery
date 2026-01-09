@@ -9,7 +9,6 @@ export async function fetchPhotos(query = 'nature', page = 1) {
     showLoading(true)
     hideError()
 
-    // Параметри запиту
     const params = {
       query: query,
       page: page,
@@ -17,7 +16,6 @@ export async function fetchPhotos(query = 'nature', page = 1) {
       client_id: UNSPLASH_ACCESS_KEY
     }
 
-    // Додати order_by якщо не relevant
     if (state.sortOrder !== 'relevant') {
       params.order_by = state.sortOrder
     }
